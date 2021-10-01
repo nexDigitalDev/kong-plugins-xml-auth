@@ -4,8 +4,10 @@ local typedefs = require "kong.db.schema.typedefs"
 return {
   name = "xml-auth",
   fields = {
+
     { consumer = typedefs.no_consumer },
-    { run_on = typedefs.run_on_first },
+    -- run_on_first typedef/field was removed in Kong 2.x
+    -- { run_on = typedefs.run_on_first },
     { protocols = typedefs.protocols_http },
     { config = {
         type = "record",
